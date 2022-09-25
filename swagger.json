@@ -1,0 +1,169 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "TODO API - TypeScript",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8000/api/v1"
+    }
+  ],
+  "paths": {
+    "/task": {
+      "put": {
+        "tags": [
+          "General"
+        ],
+        "summary": "Create a new task",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "name": "Do the dishes",
+                  "description": "Wash the plates and glasses"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "status": "Success",
+                "task": {
+                  "done": false,
+                  "creationDate": "2022-09-25T13:44:42.626Z",
+                  "lastUpdateDate": "2022-09-25T13:44:42.626Z",
+                  "id": 23,
+                  "name": "Do the dishes",
+                  "description": "Wash the plates and glasses"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "General"
+        ],
+        "summary": "Get all tasks",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "status": "Success",
+                "tasks": [
+                  {
+                    "done": false,
+                    "creationDate": "2022-09-25T13:44:42.626Z",
+                    "lastUpdateDate": "2022-09-25T13:44:42.626Z",
+                    "id": 23,
+                    "name": "Do the dishes",
+                    "description": "Wash the plates and glasses"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/task/{taskId}": {
+      "get": {
+        "tags": [
+          "General"
+        ],
+        "summary": "Get a specific task",
+        "parameters": [
+          {
+            "name": "taskId",
+            "in": "path",
+            "schema": {
+              "type": "integer"
+            },
+            "required": true,
+            "example": "22"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "General"
+        ],
+        "summary": "Edit an existing task",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "description": "Nettoyer la chambre, la cuisine et le salon",
+                  "done": true
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "taskId",
+            "in": "path",
+            "schema": {
+              "type": "integer"
+            },
+            "required": true,
+            "example": "22"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "General"
+        ],
+        "summary": "Delete a specific task",
+        "parameters": [
+          {
+            "name": "taskId",
+            "in": "path",
+            "schema": {
+              "type": "integer"
+            },
+            "required": true,
+            "example": "22"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

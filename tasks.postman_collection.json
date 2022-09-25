@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "fccbaeb1-b166-4302-9795-8b2e924e9ae9",
+		"name": "TODO API - TypeScript",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Créer une nouvelle tâche",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Faire le ménage\",\r\n    \"description\": \"Nettoyer la chambre, la cuisine et le salon\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/task",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Récupérer toutes les tâches",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/task",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Récupérer le contenu d'une tâche Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/task/:taskId",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"task",
+						":taskId"
+					],
+					"variable": [
+						{
+							"key": "taskId",
+							"value": "22"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modifier une tâche existante",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"description\": \"Nettoyer la chambre, la cuisine et le salon\",\r\n    \"done\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/task/:taskId",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"task",
+						":taskId"
+					],
+					"variable": [
+						{
+							"key": "taskId",
+							"value": "22"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modifier une tâche existante Copy",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/task/:taskId",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"task",
+						":taskId"
+					],
+					"variable": [
+						{
+							"key": "taskId",
+							"value": "22"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://127.0.0.1:8000/api/v1",
+			"type": "default"
+		}
+	]
+}
