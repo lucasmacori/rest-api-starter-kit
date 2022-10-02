@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "TODO API - TypeScript",
+    "title": "Rest API Starter pack",
     "version": "1.0.0"
   },
   "servers": [
@@ -13,7 +13,7 @@
     "/task": {
       "put": {
         "tags": [
-          "General"
+          "Tasks"
         ],
         "summary": "Create a new task",
         "requestBody": {
@@ -50,7 +50,7 @@
       },
       "get": {
         "tags": [
-          "General"
+          "Tasks"
         ],
         "summary": "Get all tasks",
         "responses": {
@@ -78,7 +78,7 @@
     "/task/{taskId}": {
       "get": {
         "tags": [
-          "General"
+          "Tasks"
         ],
         "summary": "Get a specific task",
         "parameters": [
@@ -103,7 +103,7 @@
       },
       "patch": {
         "tags": [
-          "General"
+          "Tasks"
         ],
         "summary": "Edit an existing task",
         "requestBody": {
@@ -141,7 +141,7 @@
       },
       "delete": {
         "tags": [
-          "General"
+          "Tasks"
         ],
         "summary": "Delete a specific task",
         "parameters": [

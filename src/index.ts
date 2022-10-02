@@ -12,6 +12,8 @@ import v1TaskRouter from './v1/routes/task.routes'
 // Importing swagger files
 import swaggerDocument from './../swagger.json'
 
+export let app = express()
+
 async function startServer(): Promise<void> {
     try {
         dotenv.config()
@@ -21,9 +23,6 @@ async function startServer(): Promise<void> {
         const res = await db.query('SELECT TO_CHAR(NOW(), \'YYYY-MM-DD HH24:MM:SS\') AS current_date_time, 1 = $1 AS condition_test', [1])
         console.log(`[INFO] Current time given by the database: ${res.rows[0].current_date_time}`)
         console.log(`[SUCCESS] Tested database's connection succesfully !`)
-
-        // Creating the app instance
-        const app = express()
 
         // Reading config file (.env file)
         const port = process.env.PORT || 8000

@@ -31,5 +31,6 @@ npm run dev
 8. Edit the classes and happy coding !
 
 ## Project architecture
+
 - The source code is located in "src" directory
 - The .env file allows you to configure the api (HTTP port and database settings)
